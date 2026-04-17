@@ -71,13 +71,3 @@ pub struct ReplacementInfo {
     pub fee_bump: u64,
 }
 
-
-pub struct MempoolEntry {
-    pub tx: Transaction,
-    pub received_at: u64,
-
-    pub effective_gas_price: u64,
-    pub nonce: u64,
-
-    pub is_executable: bool,
-}

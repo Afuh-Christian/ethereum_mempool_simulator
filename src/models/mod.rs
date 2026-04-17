@@ -8,3 +8,4 @@ pub mod network_event;
 pub mod fee_market;
 pub mod simulator;
 pub mod address;
+pub mod mempool_entry;
