@@ -11,3 +11,4 @@ pub mod address;
 pub mod mempool_entry;
 pub mod block_builder;
 pub mod metrix;
+pub mod utils;

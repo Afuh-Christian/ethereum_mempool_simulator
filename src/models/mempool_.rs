@@ -1,6 +1,6 @@
 use std::{collections::{BinaryHeap, HashMap}, time::{SystemTime, UNIX_EPOCH}};
 
-use crate::models::{account_state::AccountState, address::Address, mempool_entry::MempoolEntry, transaction::Transaction, tx_meta::TxMeta};
+use crate::models::{account_state::AccountState, address::Address, mempool_entry::MempoolEntry, transaction::Transaction, tx_meta::TxMeta, utils::Utility};
 
 pub struct Mempool {
     pub txs: HashMap<u64, MempoolEntry>,        // hash → entry
@@ -36,7 +36,7 @@ impl Mempool {
             tx,
             self.base_fee,
             account.current_nonce,
-            self.now(), // assume helper
+            Utility::now(), // assume helper
         );
 
         // 4. Store globally
@@ -49,16 +49,6 @@ impl Mempool {
 
         Ok(())
     }
-
-
-       pub fn now(&self, ) -> u64 {
-
-    SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .expect("Time went backwards")
-        .as_millis() as u64
-}
-
 
 
         pub fn validate_transaction(&self, tx: &Transaction) -> Result<(), &'static str> {

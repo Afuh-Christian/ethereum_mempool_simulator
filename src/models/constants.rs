@@ -55,14 +55,14 @@ pub struct Config {
 }
 
 
-pub struct Metrics {
-    pub total_txs: u64,
-    pub dropped_txs: u64,
-    pub included_txs: u64,
+// pub struct Metrics {
+//     pub total_txs: u64,
+//     pub dropped_txs: u64,
+//     pub included_txs: u64,
 
-    pub avg_latency_ms: u64,
-    pub mempool_size: usize,
-}
+//     pub avg_latency_ms: u64,
+//     pub mempool_size: usize,
+// }
 
 
 pub struct ReplacementInfo {
